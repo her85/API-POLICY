@@ -38,6 +38,22 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+// Ejecutar migraciones automáticamente
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<AppDbContext>();
+        context.Database.Migrate(); // Aplica migraciones pendientes
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "Error al ejecutar las migraciones de la base de datos.");
+    }
+}
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
