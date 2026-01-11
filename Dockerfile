@@ -1,18 +1,21 @@
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /app
 
-# Copiar archivos y restaurar
-COPY *.csproj ./
+# Copiar archivos del proyecto
+COPY Api-Policy/*.csproj ./Api-Policy/
+WORKDIR /app/Api-Policy
 RUN dotnet restore
 
-# Copiar todo y publicar
-COPY . ./
+# Copiar todo el contenido y publicar
+WORKDIR /app
+COPY Api-Policy/. ./Api-Policy/
+WORKDIR /app/Api-Policy
 RUN dotnet publish -c Release -o out
 
 # Imagen de ejecución
 FROM mcr.microsoft.com/dotnet/aspnet:10.0
 WORKDIR /app
-COPY --from=build /app/out .
+COPY --from=build /app/Api-Policy/out .
 
 # Configurar puerto para Render
 ENV ASPNETCORE_URLS=http://+:10000
