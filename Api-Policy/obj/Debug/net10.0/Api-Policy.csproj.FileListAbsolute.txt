@@ -206,3 +206,4 @@ E:\02_Proyectos de software\API-POLICY\Api-Policy\bin\Debug\net10.0\runtimes\win
 E:\02_Proyectos de software\API-POLICY\Api-Policy\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
 E:\02_Proyectos de software\API-POLICY\Api-Policy\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 E:\02_Proyectos de software\API-POLICY\Api-Policy\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\02_Proyectos de software\API-POLICY\Api-Policy\obj\Debug\net10.0\Api-Policy.sourcelink.json
