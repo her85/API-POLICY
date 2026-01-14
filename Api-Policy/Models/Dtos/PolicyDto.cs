@@ -22,6 +22,7 @@ public record PolicyReadDto(
     int Id, 
     string PolicyNumber, 
     string ClientName, 
+    decimal CoverageAmount, 
     decimal MonthlyPremium, 
     string Status
 );

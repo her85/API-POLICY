@@ -27,7 +27,7 @@ public class PoliciesController : ControllerBase
     {
         return await _context.Policies
             .Select(p => new PolicyReadDto(
-                p.Id, p.PolicyNumber, p.ClientName, p.MonthlyPremium, p.Status.ToString()
+                p.Id, p.PolicyNumber, p.ClientName, p.CoverageAmount, p.MonthlyPremium, p.Status.ToString()
             ))
             .ToListAsync();
     }
@@ -67,7 +67,7 @@ public class PoliciesController : ControllerBase
         await _context.SaveChangesAsync();
 
         return CreatedAtAction(nameof(GetPolicies), new { id = policy.Id }, 
-            new PolicyReadDto(policy.Id, policy.PolicyNumber, policy.ClientName, policy.MonthlyPremium, policy.Status.ToString()));
+            new PolicyReadDto(policy.Id, policy.PolicyNumber, policy.ClientName, policy.CoverageAmount, policy.MonthlyPremium, policy.Status.ToString()));
     }
 
     /// <summary>
