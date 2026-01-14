@@ -34,8 +34,8 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Policy>().HasData(
             new Policy { 
                 Id = 1, 
-                PolicyNumber = "POL-2024-001", 
-                ClientName = "Juan B", 
+                PolicyNumber = "POL-F8B6B647", 
+                ClientName = "Juan Ramírez", 
                 StartDate = new (2024, 1, 1), 
                 EndDate = new (2025, 1, 1),
                 CoverageAmount = 50000,
