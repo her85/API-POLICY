@@ -3,6 +3,7 @@ using System;
 using Api_Policy.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api_Policy.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260115165939_getPolicies")]
+    partial class getPolicies
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.1");
@@ -52,9 +55,6 @@ namespace Api_Policy.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ClientAge")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("ClientName")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -80,9 +80,6 @@ namespace Api_Policy.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Type")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("Id");
 
                     b.ToTable("Policies");
@@ -91,15 +88,13 @@ namespace Api_Policy.Migrations
                         new
                         {
                             Id = 1,
-                            ClientAge = 35,
                             ClientName = "Juan Ramírez",
                             CoverageAmount = 50000m,
                             EndDate = new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             MonthlyPremium = 260m,
                             PolicyNumber = "POL-F8B6B647",
                             StartDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Status = 1,
-                            Type = 0
+                            Status = 1
                         });
                 });
 

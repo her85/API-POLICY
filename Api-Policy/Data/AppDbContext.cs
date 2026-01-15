@@ -40,7 +40,9 @@ public class AppDbContext : DbContext
                 EndDate = new (2025, 1, 1),
                 CoverageAmount = 50000,
                 MonthlyPremium = 260,
-                Status = PolicyStatus.Active
+                Status = PolicyStatus.Activa,
+                ClientAge = 35,
+                Type = PolicyType.Vida
             }
         );
     }
