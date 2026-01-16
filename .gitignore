@@ -1,0 +1,43 @@
+## Visual Studio / .NET
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build directories
+**/bin/
+**/obj/
+out/
+publish/
+artifacts/
+
+# Rider
+.idea/
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# User secrets and local settings
+secrets.json
+appsettings.Development.json
+*.SecretManager
+
+# Logs and temp files
+*.log
+*.tmp
+*.cache
+
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Database files
+*.db
+*.sqlite
